@@ -2,6 +2,7 @@
   <v-container>
     <v-row class="text-center">
       <h1>teste</h1>
+      <h1>teste</h1>
       <v-col cols="12">
         <v-img
           :src="require('../assets/logo.svg')"
