@@ -1,61 +1,76 @@
 <template>
   <v-app>
+<div>
     <v-app-bar
-      app
-      color="pink"
+      color="green lighten-1"
+      dense
       dark
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+      <v-toolbar-title>Campeonato Brasileiro ⚽</v-toolbar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+    
     </v-app-bar>
 
+  <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+    >
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group
+          v-model="group"
+          active-class="green lighten-1"
+        >
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-whistle</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Início</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-soccer-field</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Classificação</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+
+  </div>
     <v-main>
-      <HelloWorld/>
+      <InicioNovo/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+
+import InicioNovo from './components/InicioNovo.vue'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+
+    InicioNovo,
+
+
   },
 
 
   data: () => ({
-    //
+
+    drawer: false,
+    group: null,
+    
   }),
 };
 </script>
