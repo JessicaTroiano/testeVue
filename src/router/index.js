@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import InicioNovo from '../views/InicioNovo.vue'
-import ClubesLista from './views/ClubesLista.vue'
+import ClubesLista from '../views/ClubesLista.vue'
 
 Vue.use(VueRouter)
 
@@ -14,7 +14,7 @@ const routes = [
 
   {
     path: '/classificacao',
-    name: 'Classificacao',
+    name: 'ClubesLista',
     component: ClubesLista
   },
 ]
